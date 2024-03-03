@@ -13,7 +13,7 @@ import urllib.request
 
 
 # Load the random forest model
-model_path_1 = "./phones/src/models/best_model.joblib"
+model_path_1 = "./phones/src/models/best_model_final.joblib"
 model_1 = joblib.load(model_path_1)
 
 model_path_2 = "./laptops/models/random_forest.joblib"
@@ -38,21 +38,21 @@ else:
 
 # Function to open the link in a new tab
 def open_link_in_new_tab(link, text):
-    new_tab_code = f'<a href="{link}" target="_blank" style="font-size: 16px; color: blue;">{text}</a>'
+    new_tab_code = f'<a href="{link}" target="_blank" style="font-size: 16px; color: white;">{text}</a>'
     st.markdown(new_tab_code, unsafe_allow_html=True)
 
 def show_developer_details():
     st.markdown(
         """
-        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; background-image: url('https://media.giphy.com/media/ftAyb0CG1FNAIZt4SO/giphy.gif'); background-size: cover; background-repeat: no-repeat;">
-            <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px; color: green;">Developer Details:</p>
-            <p style="font-size: 18px; color: black;"><b>Name:</b>  Nandini Mojjada</p>
-            <p style="font-size: 18px; color: black;"><b>Study:</b> sanketika vidya parishad</p>
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; background-image: url('https://media.giphy.com/media/7VzgMsB6FLCilwS30v/giphy.gif'); background-size: cover; background-repeat: no-repeat;">
+            <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px; color: white;">Developer Details:</p>
+            <p style="font-size: 18px; color: white;"><b>Name:</b> Somaraju Laxman Prasad</p>
+            <p style="font-size: 18px; color: white;"><b>Study:</b> Masters in Data Analytics Level 9</p>
         """,
         unsafe_allow_html=True,
     )
-    
-    open_link_in_new_tab("https://www.linkedin.com/in/nandini-mojjada-b0a40924a/", "View LinkedIn")
+    open_link_in_new_tab("https://www.datascienceportfol.io/laxmanprasad", "View More data Projects")
+    open_link_in_new_tab("https://www.linkedin.com/in/laxman-prasad-somaraju-48a397229/", "View LinkedIn")
     st.markdown("</div>", unsafe_allow_html=True)
 
 
@@ -60,11 +60,10 @@ def show_developer_details():
 def show_progress_info():
     st.markdown(
         """
-        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; margin-top: 20px; background-image: url('https://media.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif'); background-size: cover; background-repeat: no-repeat;">
-            <p style="font-size: 21px; font-weight: bold; margin-bottom: 10px; color: red;">Work in Progress:</p>
-            <p style="font-size: 20px; font-weight: bold; color: yellow;">This app is primarily focused on phone analysis. Development for laptops is in progress.</p>
-            <p style="font-size: 19px; font-weight: bold; color: yellow;">Once updated for laptops, all visualizations and modeling info will be available.</p>
-            <p style="font-size: 20px; font-weight: bold; color: yellow;">In the meantime, you can check my GitHub repository for the code and app development progress.</p>
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; margin-top: 20px; background-image: url('https://media.giphy.com/media/Qvp6Z2fidQR34IcwQ5/giphy.gif'); background-size: cover; background-repeat: no-repeat;">
+            <p style="font-size: 21px; font-weight: bold; margin-bottom: 10px; color: red;">Note:</p>
+            <p style="font-size: 20px; font-weight: bold; color: white;">Please note that our app's success prediction for smartphones and laptops is based solely on historical data and machine learning algorithms. While we strive to provide valuable insights into the likelihood of success in the market, it's important to understand that the predictions do not take into account all marketing strategies, external influences, or real-time market dynamics. The app serves as an informative tool to aid in decision-making by analyzing past patterns, but actual market outcomes may be influenced by a wide range of factors beyond the scope of the model. Users should consider the predictions as one aspect of their overall strategy and complement them with comprehensive market research and marketing ideas to maximize their products' chances of success.</p>
+            <p style="font-size: 20px; font-weight: bold; color: white;">you can check my GitHub repository for the code and app development progress.</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -85,8 +84,7 @@ st.markdown(
 # Display developer details
 show_developer_details()
 
-# Display progress information
-show_progress_info()
+
 
 
 
@@ -571,7 +569,7 @@ if st.button("View Phone Dataset by downloading from the github and drop in here
     view_dataset()
 
 # Link to view the dataset on GitHub
-github_link = "https://github.com/NandiniMojjada/myproject/blob/main/phones/data/processed-v2.csv"
+github_link = "https://github.com/laxmanprasadsomarajutus/myproject/blob/main/phones/data/processed-v2.csv"
 if st.button("View Phone Dataset on GitHub"):
     st.markdown(f"Click [here]({github_link}) to view the dataset on GitHub.")
 
@@ -611,3 +609,53 @@ if not graphs_displayed and st.button("View Graphs"):
 # Add a back button to return to the main UI if graphs are displayed
 if graphs_displayed and st.button("Back"):
     graphs_displayed = False
+# Button to display the information about the app and modeling
+if st.button("About the App and Modeling"):
+    st.markdown(
+        """
+        **About the App and Modeling:**
+
+        Our app leverages the power of machine learning to predict the potential success of smartphones in the market. Using a trained Random Forest model, the app takes smartphone features as input and provides users with insights into the likelihood of success in the market.
+
+        **Smartphone Success Prediction:**
+        - **Input:** Users can input various smartphone attributes, including 'mrp', 'ram', 'inbuilt_storage', 'weight', 'battery_power', 'battery_type', 'form_factor', 'length', 'width', 'height', 'os_name', 'os_version', 'phone_warranty (months)', 'camera_count', 'cam_has_AI', 'cam_has_OIS', 'cam_has_Zoom', 'cam_has_HDR', 'cam_has_Macro', and 'cam_has_Portrait'.
+        - **Prediction:** Our trained Random Forest model uses the provided features to make predictions on the potential success of the smartphone. The prediction result will indicate whether the smartphone is likely to be successful or not in the market.
+
+        **Insights for Decision Making:**
+        - The app offers valuable insights into the importance of different smartphone features in determining success. Users can identify key factors that positively or negatively impact the predicted success of their smartphones.
+        - Please note that the predictions are based on historical patterns observed in the training data and are meant to be informative. Actual market outcomes may be influenced by various external factors beyond the scope of the model.
+
+        **Modeling Approach:**
+        - The Random Forest model used in the app was trained on a diverse and representative dataset, consisting of various smartphone features and their corresponding market outcomes.
+        - Feature engineering techniques were employed to create relevant features like 'avg_rating' and 'percentage' success metrics, contributing to the accuracy of the model's predictions.
+        - The selection of thresholds and weightages for the success metric was iteratively fine-tuned to achieve a balanced representation of smartphone success factors. While the initial values were randomly assigned, the refinement process involved trial and error and exploratory data analysis.
+
+        By combining the power of machine learning and feature engineering, our app aims to assist users in making informed decisions when designing and marketing their smartphones, ultimately enhancing their chances of success in the competitive market.
+        """
+    )
+
+if st.button("About the App and Modeling(laptop)"):    # Displaying the description for Laptop section
+    st.markdown(
+    """
+    **About the App and Modeling (Laptop):**
+
+    Our app goes beyond predicting smartphone success; it also extends its capabilities to classify the potential success of laptops in the market. Powered by advanced machine learning techniques, our app takes laptop features as input and provides users with valuable insights into the likelihood of success in the competitive laptop market.
+
+    **Laptop Success Classification:**
+    - **Input:** Users can input a range of laptop specifications, including 'mrp', 'os', 'hard_disk_type', 'ram_memory', 'processor_brand', 'processor_count', 'display_type', 'form_factor', 'no of 5 star', 'no of 4 star', 'no of 3 star', 'no of 2 star', 'no of 1 star', 'screen_res_w', 'screen_res_h', 'length', 'width', 'height', 'weight', 'hard_drive_size_value', 'hard_drive_size_unit', and 'battery_type'.
+    - **Prediction:** Utilizing a carefully trained Random Forest model, the app analyzes the provided laptop features to predict its potential success in the market. The prediction result will indicate whether the laptop is likely to be successful or not.
+
+    **Insights for Decision Making:**
+    - Our app doesn't stop at just providing predictions. It offers valuable insights into the significance of different laptop features in determining success. Users can identify key factors that positively or negatively impact the predicted success of their laptops.
+    - Please note that the predictions are based on historical patterns observed in the training data and serve as informative guidelines. The actual market performance of laptops may be influenced by a multitude of external factors beyond the scope of the model.
+
+    **Modeling Approach:**
+    - Similar to the smartphone success prediction, our Random Forest model for laptops was trained on a diverse and representative dataset. This dataset contains a wide array of laptop features and their corresponding market outcomes, ensuring the model's ability to generalize to various laptop models.
+    - Feature engineering techniques were applied to extract relevant features, such as 'avg_rating' and 'percentage' success metrics, further contributing to the model's accuracy in predicting laptop success.
+    - The determination of thresholds and weightages for the success metric followed an iterative fine-tuning process. The initial values were randomly assigned, but through meticulous trial and error and exploratory data analysis, we arrived at refined values for a well-balanced representation of laptop success factors.
+
+    By leveraging the power of machine learning and feature engineering, our app aims to empower users in making informed decisions when designing, manufacturing, and marketing their laptops. We believe that these insights will enhance their chances of achieving success in the dynamic and competitive laptop market.
+    """
+)
+# Display progress information
+show_progress_info()
