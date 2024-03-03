@@ -46,13 +46,13 @@ def show_developer_details():
         """
         <div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; background-image: url('https://media.giphy.com/media/7VzgMsB6FLCilwS30v/giphy.gif'); background-size: cover; background-repeat: no-repeat;">
             <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px; color: white;">Developer Details:</p>
-            <p style="font-size: 18px; color: white;"><b>Name:</b> Somaraju Laxman Prasad</p>
-            <p style="font-size: 18px; color: white;"><b>Study:</b> Masters in Data Analytics Level 9</p>
+            <p style="font-size: 18px; color: white;"><b>Name:</b> Nandini Mojjada</p>
+            <p style="font-size: 18px; color: white;"><b>Study:</b> sanketika vidya parishad</p>
         """,
         unsafe_allow_html=True,
     )
-    open_link_in_new_tab("https://www.datascienceportfol.io/laxmanprasad", "View More data Projects")
-    open_link_in_new_tab("https://www.linkedin.com/in/laxman-prasad-somaraju-48a397229/", "View LinkedIn")
+    
+    open_link_in_new_tab("https://www.linkedin.com/in/nandini-mojjada-b0a40924a/", "View LinkedIn")
     st.markdown("</div>", unsafe_allow_html=True)
 
 
@@ -569,7 +569,7 @@ if st.button("View Phone Dataset by downloading from the github and drop in here
     view_dataset()
 
 # Link to view the dataset on GitHub
-github_link = "https://github.com/laxmanprasadsomarajutus/myproject/blob/main/phones/data/processed-v2.csv"
+github_link = "https://github.com/NandiniMojjada/myproject/blob/main/phones/data/processed-v2.csv"
 if st.button("View Phone Dataset on GitHub"):
     st.markdown(f"Click [here]({github_link}) to view the dataset on GitHub.")
 
